@@ -1,0 +1,88 @@
+.glass-effect {
+    @apply bg-white/30 backdrop-blur-lg border border-solid border-white/30 shadow-lg;
+  }
+  .icon-card:hover{
+    @apply  hover:bg-teal-500 transition-colors duration-300 hover:text-white
+  }
+  .input-box{
+    @apply w-full p-2 mb-4 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-black placeholder-gray-800
+  }
+
+   /* Hover effect  */
+   .hover-underline {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: all 0.1s;
+  }
+  
+  .hover-underline:hover {
+    color: #6e08eb !important;  /* or the equivalent hex code for purple-400 */
+    cursor: pointer;
+    
+  }
+  
+  .hover-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #6b00ed; /* or the equivalent hex code for purple-400 */
+    transition: all 0.3s;
+  }
+  
+  .hover-underline:hover::after {
+    width: 100%;
+   
+  }
+  
+ 
+
+  /* ------------hover card -------------- */
+    /* Hover effect  */.hover-card {
+  position: relative;
+  padding: 20px;
+  background-color: #ffffff; /* Initial background color */
+  color: #6b00ed; /* Initial text color */
+  transition: transform 0.10s ease-in-out, color 0.3s ease-in-out;
+  transform-origin: center;
+  overflow: hidden; /* Ensures the animation is contained within the card */
+}
+
+.hover-card:hover {
+  transform: translateX(1vmax);
+  color: #ffffff !important; /* Change text color on hover */
+  cursor: pointer;
+}
+
+.hover-card::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #afafb1; /* Final background color */
+  transition: none;
+  z-index: 0;
+}
+
+.hover-card:hover::before {
+  animation: slideUp 0.3s forwards ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.hover-card * {
+  position: relative;
+  z-index: 1;
+}
